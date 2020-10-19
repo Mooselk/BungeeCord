@@ -59,7 +59,6 @@ public enum Protocol
     // 0
     GAME
     {
-
         {
             TO_CLIENT.registerPacket(
                     KeepAlive.class,
@@ -351,8 +350,8 @@ public enum Protocol
     /*========================================================================*/
     public static final int MAX_PACKET_ID = 0xFF;
     /*========================================================================*/
-    final DirectionData TO_SERVER = new DirectionData( this, ProtocolConstants.Direction.TO_SERVER );
-    final DirectionData TO_CLIENT = new DirectionData( this, ProtocolConstants.Direction.TO_CLIENT );
+    public final DirectionData TO_SERVER = new DirectionData( this, ProtocolConstants.Direction.TO_SERVER );
+    public final DirectionData TO_CLIENT = new DirectionData( this, ProtocolConstants.Direction.TO_CLIENT );
 
     public static void main(String[] args)
     {
@@ -411,7 +410,7 @@ public enum Protocol
         return new ProtocolMapping( protocol, id );
     }
 
-    static final class DirectionData
+    public static final class DirectionData
     {
 
         private final TIntObjectMap<ProtocolData> protocols = new TIntObjectHashMap<>();
